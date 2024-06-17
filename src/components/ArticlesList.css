@@ -1,0 +1,8 @@
+.articles-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* spec wants mobile and desktop devices to be considered using flex */
