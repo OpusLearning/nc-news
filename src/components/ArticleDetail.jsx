@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../api";
+import CommentsList from "./CommentsList";
 import "./ArticleDetail.css";
 
 const ArticleDetail = () => {
@@ -37,10 +38,13 @@ const ArticleDetail = () => {
           <p>{new Date(article.created_at).toLocaleDateString()}</p>
           <p>{article.body}</p>
           <div className="article-footer">
+            <br /> <br />
+            <span>{article.votes} votes</span>
+            <br />
             <span>{article.comment_count} comments</span>
             <br />
-            <span>{article.votes} votes</span>
           </div>
+          <CommentsList article_id={article_id} />
         </>
       ) : (
         <p>Article not found</p>
