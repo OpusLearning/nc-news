@@ -9,9 +9,10 @@ const ArticlesList = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    setIsLoading(true);
+
     getArticles()
       .then((data) => {
-        //console.log( data); // Object does not return body
         setArticles(data);
         setIsLoading(false);
       })
