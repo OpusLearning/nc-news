@@ -1,0 +1,9 @@
+.article-card {
+  border: 1px solid #ccc;
+  padding: 30px;
+  width: 300px;
+}
+
+.article-card p {
+  font-size: 1em;
+}
