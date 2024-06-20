@@ -4,8 +4,10 @@ const api = axios.create({
   baseURL: "https://ncnews-trt9.onrender.com/api",
 });
 
-export const getArticles = () => {
-  return api.get("/articles").then((response) => response.data.articles);
+export const getArticles = async (params = {}) => {
+  const queryStr = new URLSearchParams(params).toString();
+  const response = await api.get(`/articles?${queryStr}`);
+  return response.data.articles;
 };
 
 export const getArticleById = (article_id) => {
