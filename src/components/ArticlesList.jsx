@@ -33,7 +33,7 @@ const ArticleList = () => {
     setOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
   };
 
-  if (isLoading) return <div className="loading">Loading...</div>;
+  // if (isLoading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
 
   return (

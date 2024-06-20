@@ -5,6 +5,7 @@ import { postComment } from "../api";
 const CommentForm = ({ article_id, onCommentSubmit }) => {
   const [body, setBody] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -23,6 +24,9 @@ const CommentForm = ({ article_id, onCommentSubmit }) => {
       })
       .catch((error) => {
         setIsSubmitting(false);
+        setError(
+          "Failed to post comment please ensure you  enter the comment in the text area."
+        );
       });
   };
 
@@ -37,6 +41,7 @@ const CommentForm = ({ article_id, onCommentSubmit }) => {
           required
         ></textarea>
       </div>
+      {error && <p className="error-message">{error}</p>}
       <button type="submit" disabled={isSubmitting}>
         {isSubmitting ? "Submitting..." : "Submit"}
       </button>
