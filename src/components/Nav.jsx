@@ -35,6 +35,7 @@ const Nav = () => {
           </li>
         ))}
       </ul>
+      {error && <p className="error-message">{error}</p>}
     </nav>
   );
 };

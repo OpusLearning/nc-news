@@ -33,6 +33,7 @@ const TopicList = () => {
           </li>
         ))}
       </ul>
+      {error && <p className="error-message">{error}</p>}
     </div>
   );
 };

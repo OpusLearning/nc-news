@@ -18,7 +18,7 @@ const TopicPage = () => {
         setArticles(filteredArticles);
         setIsLoading(false);
       })
-      .catch((error) => {
+      .catch(() => {
         setError("Failed to fetch articles.");
         setIsLoading(false);
       });
@@ -32,11 +32,15 @@ const TopicPage = () => {
       <h2>
         {topic_slug.charAt(0).toUpperCase() + topic_slug.slice(1)} Articles
       </h2>
-      <div className="articles-list">
-        {articles.map((article) => (
-          <ArticleCard key={article.article_id} article={article} />
-        ))}
-      </div>
+      {articles.length === 0 ? (
+        <p className="error-message">No articles found for this topic.</p>
+      ) : (
+        <div className="articles-list">
+          {articles.map((article) => (
+            <ArticleCard key={article.article_id} article={article} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
