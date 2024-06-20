@@ -13,6 +13,7 @@ const ArticleCard = ({ article }) => {
       <p>{new Date(created_at).toLocaleDateString()}</p>
       <div className="article-footer">
         <span>{comment_count} comments</span>
+        <br />
         <span>{votes} votes</span>
       </div>
       <Link to={`/articles/${article_id}`}>Read More</Link>
