@@ -14,7 +14,7 @@ const ArticleList = () => {
     setIsLoading(true);
     setError(null);
 
-    getArticles()
+    getArticles(sort_by, order)
       .then((data) => {
         setArticles(data);
         setIsLoading(false);
@@ -23,7 +23,7 @@ const ArticleList = () => {
         setError("Failed to fetch articles.");
         setIsLoading(false);
       });
-  }, []);
+  }, [sort_by, order]); // Re-fetch articles whenever sort_by or order changes
 
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
@@ -32,15 +32,6 @@ const ArticleList = () => {
   const handleOrderChange = () => {
     setOrder((prevOrder) => (prevOrder === "asc" ? "desc" : "asc"));
   };
-
-  const sortedArticles = [...articles].sort((a, b) => {
-    // workaround need to investigate why backend not returning results despite passing jest tests
-    if (order === "asc") {
-      return a[sort_by] > b[sort_by] ? 1 : -1;
-    } else {
-      return a[sort_by] < b[sort_by] ? 1 : -1;
-    }
-  });
 
   if (isLoading) return <div className="loading">Loading...</div>;
   if (error) return <div className="error">{error}</div>;
@@ -52,13 +43,14 @@ const ArticleList = () => {
         <select id="sort_by" value={sort_by} onChange={handleSortChange}>
           <option value="created_at">Date</option>
           <option value="votes">Votes</option>
+          <option value="comment_count">Comment Count</option>
         </select>
         <button onClick={handleOrderChange}>
           Order: {order === "asc" ? "Ascending" : "Descending"}
         </button>
       </div>
       <div className="articles-list">
-        {sortedArticles.map((article) => (
+        {articles.map((article) => (
           <ArticleCard key={article.article_id} article={article} />
         ))}
       </div>
