@@ -1,9 +1,9 @@
+// rewritten in menu
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getTopics } from "../api";
-import "./Nav.css";
-
-const Nav = () => {
+const TopicList = () => {
   const [topics, setTopics] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -20,23 +20,21 @@ const Nav = () => {
       });
   }, []);
 
-  if (isLoading) return <nav>Loading...</nav>;
-  if (error) return <nav>{error}</nav>;
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
-    <nav className="navbar">
-      <ul className="nav-list">
-        <li className="nav-item">
-          <Link to="/">Home</Link>
-        </li>
+    <div className="topics-list">
+      <h2>Topics</h2>
+      <ul>
         {topics.map((topic) => (
-          <li key={topic.slug} className="nav-item">
+          <li key={topic.slug}>
             <Link to={`/topics/${topic.slug}`}>{topic.slug}</Link>
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 };
 
-export default Nav;
+export default TopicList;

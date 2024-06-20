@@ -1,0 +1,17 @@
+.topics-list {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.topics-list li a {
+  text-decoration: none;
+  color: #0f00e0;
+  padding: 10px;
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.topics-list li a:hover {
+  background-color: #a30f0f;
+}

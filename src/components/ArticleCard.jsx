@@ -6,6 +6,8 @@ const ArticleCard = ({ article }) => {
   const { title, author, created_at, article_id, comment_count, votes } =
     article;
 
+  console.log(article);
+
   return (
     <div className="article-card">
       <h2>{title}</h2>

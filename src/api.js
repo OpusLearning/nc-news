@@ -34,3 +34,7 @@ export const deleteComment = (comment_id) => {
   const url = `/comments/${comment_id}`;
   return api.delete(url).then((response) => response.data);
 };
+
+export const getTopics = () => {
+  return api.get("/topics").then((response) => response.data.topics);
+};
