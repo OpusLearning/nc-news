@@ -1,0 +1,16 @@
+.comment-form {
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 16px;
+  background-color: #ffffff57;
+}
+
+.comment-form textarea {
+  width: 70%;
+  height: 150px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: vertical;
+}

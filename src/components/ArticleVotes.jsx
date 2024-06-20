@@ -25,7 +25,8 @@ const ArticleVotes = ({ article_id, initialVotes }) => {
   };
 
   if (error) return <div className="error">{error}</div>;
-
+  // issue of button being able to be pressed multiple times
+  // determine condition for single vote - probably  user context
   return (
     <div className="votes">
       <p>Votes: {votes}</p>
