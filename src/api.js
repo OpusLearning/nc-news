@@ -17,3 +17,8 @@ export const getArticleComments = (article_id) => {
   const url = `/articles/${article_id}/comments`;
   return api.get(url).then((response) => response.data);
 };
+
+export const patchArticleVotes = (article_id, inc_votes) => {
+  const url = `/articles/${article_id}`;
+  return api.patch(url, { inc_votes }).then((response) => response.data);
+};

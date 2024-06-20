@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { getArticleById } from "../api";
 import CommentsList from "./CommentsList";
 import "./ArticleDetail.css";
+import ArticleVotes from "./ArticleVotes";
 
 const ArticleDetail = () => {
   const { article_id } = useParams();
@@ -39,7 +40,10 @@ const ArticleDetail = () => {
           <p>{article.body}</p>
           <div className="article-footer">
             <br /> <br />
-            <span>{article.votes} votes</span>
+            <ArticleVotes
+              article_id={article_id}
+              initialVotes={article.votes}
+            />
             <br />
             <span>{article.comment_count} comments</span>
             <br />
