@@ -5,7 +5,7 @@ This project is a news server built using postgress node.js, express, react. The
     • Post and delete comments for a given user
     • Upvote and downvote articles 
 Live Demo
-Check out the live version of the app https://sensational-klepon-f44290.netlify.app
+Check out the live version of the app https://news-server-jameswallace.netlify.app/
 Backend Repository
 The backend code for this project can be found at https://github.com/OpusLearning/NCNews
 
