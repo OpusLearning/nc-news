@@ -1,3 +1,28 @@
+.articles-list-container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sort-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort-controls label {
+  margin-right: 10px;
+}
+
+.sort-controls select {
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.sort-controls button {
+  padding: 5px 10px;
+}
+
 .articles-list {
   display: flex;
   flex-wrap: wrap;
@@ -5,4 +30,13 @@
   justify-content: center;
 }
 
-/* spec wants mobile and desktop devices to be considered using flex */
+.article-card {
+  border: 1px solid #ccc;
+  padding: 30px;
+  width: 300px;
+  margin: 10px;
+}
+
+.article-card p {
+  font-size: 1em;
+}

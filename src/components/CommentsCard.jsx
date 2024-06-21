@@ -6,15 +6,18 @@ const username = "cooljmessy";
 const CommentCard = ({ comment, onDelete }) => {
   const { comment_id, author, created_at, body, votes } = comment;
   const [isDeleting, setIsDeleting] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleDelete = () => {
     setIsDeleting(true);
+    setError(null);
     deleteComment(comment_id)
       .then(() => {
         onDelete(comment_id);
       })
       .catch((error) => {
         setIsDeleting(false);
+        setError("Failed to delete.");
       });
   };
 
@@ -28,9 +31,12 @@ const CommentCard = ({ comment, onDelete }) => {
         <span>{votes} votes</span>
       </div>
       {author === username && (
-        <button onClick={handleDelete} disabled={isDeleting}>
-          {isDeleting ? "Deleting..." : "Delete"}
-        </button>
+        <>
+          <button onClick={handleDelete} disabled={isDeleting}>
+            {isDeleting ? "Deleting..." : "Delete"}
+          </button>
+          {error && <p className="error-message">{error}</p>}
+        </>
       )}
     </div>
   );

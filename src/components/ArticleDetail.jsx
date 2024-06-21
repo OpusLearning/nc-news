@@ -39,11 +39,11 @@ const ArticleDetail = () => {
   const handleDeleteComment = (comment_id) => {
     setComments(
       (prevComments) =>
-        prevComments.filter((comment) => comment.comment_id !== comment_id) // re move commt
+        prevComments.filter((comment) => comment.comment_id !== comment_id) // remove comment
     );
   };
 
-  if (isLoading) return <div className="loading">Loading...</div>;
+  if (isLoading) return <div className="loading"></div>;
   if (error) return <div className="error">{error}</div>;
 
   return (
