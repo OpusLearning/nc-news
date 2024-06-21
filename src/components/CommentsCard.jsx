@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./CommentCard.css";
 import { deleteComment } from "../api";
+import { UserContext } from "../contexts/UserContext.jsx";
 
-const username = "cooljmessy";
 const CommentCard = ({ comment, onDelete }) => {
   const { comment_id, author, created_at, body, votes } = comment;
   const [isDeleting, setIsDeleting] = useState(false);
   const [error, setError] = useState(null);
-
+  const { user } = useContext(UserContext);
   const handleDelete = () => {
     setIsDeleting(true);
     setError(null);
@@ -30,7 +30,7 @@ const CommentCard = ({ comment, onDelete }) => {
         <br />
         <span>{votes} votes</span>
       </div>
-      {author === username && (
+      {user && author === user.username && (
         <>
           <button onClick={handleDelete} disabled={isDeleting}>
             {isDeleting ? "Deleting..." : "Delete"}

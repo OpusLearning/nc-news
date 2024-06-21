@@ -1,9 +1,9 @@
 .article-card {
-  border: 1px solid #ccc;
-  padding: 30px;
-  width: 300px;
+  @apply card;
+  flex: 1;
+  min-width: 250px;
 }
 
 .article-card p {
-  font-size: 1em;
+  font-size: var(--font-size-base);
 }

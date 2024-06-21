@@ -6,6 +6,9 @@ import NotFound from "./components/NotFound";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
 import TopicPage from "./components/TopicPage";
+import "./global.css";
+import "./index.css";
+import "./App.css";
 
 const App = () => {
   return (

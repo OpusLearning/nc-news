@@ -1,5 +1,6 @@
 .topics-list {
-  padding: 20px;
+  @apply container;
+  padding: 20px 0;
   font-family: Arial, sans-serif;
 }
 
@@ -10,6 +11,7 @@
   display: block;
   border: 1px solid #ddd;
   border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .topics-list li a:hover {
