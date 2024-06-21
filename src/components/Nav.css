@@ -4,12 +4,12 @@
 }
 
 .nav-list {
-  list-style-type: none;
+  @apply list-none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 15px;
-  justify-content: center;
+  @apply flex-center;
 }
 
 .nav-item a {

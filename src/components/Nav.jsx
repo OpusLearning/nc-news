@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getTopics } from "../api";
+import UserDropdown from "./UserDropdown.jsx"; // Import UserDropdown
 import "./Nav.css";
 
 const Nav = () => {
@@ -35,6 +36,7 @@ const Nav = () => {
           </li>
         ))}
       </ul>
+      <UserDropdown />
       {error && <p className="error-message">{error}</p>}
     </nav>
   );

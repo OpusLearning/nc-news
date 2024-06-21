@@ -2,15 +2,11 @@
   max-width: 800px;
   margin: 20px auto;
   padding: 0;
-  list-style-type: none;
+  @apply list-none;
 }
 
 .comment-card {
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #f9f9f9;
+  @apply card;
 }
 
 .comment-card p {

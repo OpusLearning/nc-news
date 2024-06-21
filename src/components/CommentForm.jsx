@@ -1,18 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./CommentForm.css";
 import { postComment } from "../api";
+import { UserContext } from "../contexts/UserContext.jsx";
 
 const CommentForm = ({ article_id, onCommentSubmit }) => {
   const [body, setBody] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState(null);
+  const { user } = useContext(UserContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsSubmitting(true);
 
+    if (!user) {
+      setError("You must be logged in to post a comment.");
+      setIsSubmitting(false);
+      return;
+    }
+
     const commentData = {
-      username: "cooljmessy", // will add user context when other core work complete
+      username: user.username,
       body: body,
     };
 
@@ -25,7 +33,7 @@ const CommentForm = ({ article_id, onCommentSubmit }) => {
       .catch((error) => {
         setIsSubmitting(false);
         setError(
-          "Failed to post comment please ensure you  enter the comment in the text area."
+          "Failed to post comment please ensure you enter the comment in the text area."
         );
       });
   };
