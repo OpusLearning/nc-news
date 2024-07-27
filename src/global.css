@@ -15,6 +15,7 @@
   --font-color-link-hover: #03b1f7;
   --background-color-root: #f7f7f7;
   --max-width: 1280px;
+  --header-max-width: 100%;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -177,4 +178,3 @@ textarea {
     background-color: #f9f9f9;
   }
 }
-
