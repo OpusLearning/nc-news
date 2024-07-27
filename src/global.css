@@ -3,17 +3,17 @@
   --border-radius: 5px;
   --padding: 16px;
   --margin-bottom: 16px;
-  --background-color-comment: #e0f7fa; /* Adjusted for better contrast */
-  --background-color-form: #f0f4c3; /* Adjusted for better contrast */
+  --background-color-comment: #e0f7fa;
+  --background-color-form: #f0f4c3;
   --background-color-light: #f9f9f9;
   --font-size-base: 1em;
   --font-size-textarea: 16px;
   --font-family-base: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --font-color-primary: #000; /* Changed to black for better readability */
+  --font-color-primary: #000;
   --font-color-secondary: #333;
   --font-color-link: #05b8cf;
   --font-color-link-hover: #03b1f7;
-  --background-color-root: #f7f7f7; /* Light grey for better readability */
+  --background-color-root: #f7f7f7;
   --max-width: 1280px;
 }
 
@@ -23,7 +23,8 @@ body {
   background-color: var(--background-color-root);
   margin: 0;
   display: flex;
-  place-items: center;
+  flex-direction: column;
+  align-items: center;
   min-width: 320px;
   min-height: 100vh;
   line-height: 1.5;
@@ -59,7 +60,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
-  color: white; /* Ensure button text is readable */
+  color: white;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -71,19 +72,6 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 
 .container {
@@ -134,4 +122,47 @@ textarea {
 .flex-column {
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 8px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar a {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+  }
+
+  .card {
+    padding: 10px;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
 }
