@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  width: 100%; /* Ensure root takes full width */
 }
 
 .logo {
@@ -37,6 +38,7 @@
 
 .card {
   padding: 2em;
+  width: 100%; /* Ensure card takes full width */
 }
 
 .read-the-docs {
