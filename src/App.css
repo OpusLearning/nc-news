@@ -6,73 +6,41 @@
   width: 100%; /* Ensure root takes full width */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-  width: 100%; /* Ensure card takes full width */
-}
-
-.read-the-docs {
-  color: #888;
-}
-
 header {
   background-color: #282c34;
   padding: 20px;
   color: white;
-  width: 100%; /* Ensure header takes full width */
-  text-align: center; /* Center text in header */
+  max-width: var(--header-max-width); /* Set a max width for the header */
+  margin: 0 auto; /* Center the header */
+  text-align: center;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
+h1 {
+  font-size: 3.2em;
   margin: 0;
+  line-height: 1.1;
+  color: var(--font-color-primary);
+}
+
+.navbar {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-nav li {
-  margin: 0 10px;
-}
-
-nav a {
+.navbar a {
+  padding: 10px;
+  color: white;
   text-decoration: none;
-  color: #61dafb;
 }
 
 @media (max-width: 768px) {
   #root {
     padding: 1rem;
+  }
+
+  header {
+    padding: 10px;
   }
 
   .logo {
@@ -84,10 +52,6 @@ nav a {
     padding: 1em;
   }
 
-  header {
-    padding: 10px;
-  }
-
   nav ul {
     flex-direction: column;
     align-items: center;
@@ -96,5 +60,26 @@ nav a {
   nav li {
     display: block;
     margin: 5px 0;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar a {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.5em 1em;
+  }
+
+  .card {
+    padding: 10px;
   }
 }
