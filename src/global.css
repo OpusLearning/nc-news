@@ -15,6 +15,15 @@
   --font-color-link-hover: #03b1f7;
   --background-color-root: #f7f7f7;
   --max-width: 1280px;
+
+  /* Merged from index.css */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -29,10 +38,7 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-weight: 400;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  place-items: center;
 }
 
 a {
@@ -41,7 +47,6 @@ a {
   text-decoration: inherit;
   transition: color 0.3s;
 }
-
 a:hover {
   color: var(--font-color-link-hover);
 }
@@ -64,11 +69,9 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-
 button:hover {
   border-color: #646cff;
 }
-
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -150,6 +153,11 @@ textarea {
   .card {
     padding: 10px;
   }
+
+  nav li {
+    display: block;
+    margin: 5px 0;
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -157,11 +165,9 @@ textarea {
     color: #213547;
     background-color: #ffffff;
   }
-
   a:hover {
     color: #747bff;
   }
-
   button {
     background-color: #f9f9f9;
   }
