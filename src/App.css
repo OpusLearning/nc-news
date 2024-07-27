@@ -2,7 +2,7 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  @apply text-center;
+  text-align: center; /* Applied directly instead of using TailwindCSS */
 }
 
 .logo {
@@ -50,7 +50,7 @@ header {
 }
 
 nav ul {
-  @apply list-none;
+  list-style-type: none; /* Applied directly instead of using TailwindCSS */
   padding: 0;
 }
 
@@ -62,4 +62,28 @@ nav li {
 nav a {
   text-decoration: none;
   color: #61dafb;
+}
+
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 1em;
+  }
+
+  .card {
+    padding: 1em;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  nav li {
+    display: block;
+    margin: 5px 0;
+  }
 }
